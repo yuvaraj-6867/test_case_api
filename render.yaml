@@ -1,15 +1,10 @@
 services:
   - type: web
     name: test-case-api
-    env: ruby
-    buildCommand: ./bin/render-build.sh
-    startCommand: bundle exec rails server -b 0.0.0.0 -p $PORT
+    env: docker
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: RAILS_ENV
         value: production
       - key: RAILS_MASTER_KEY
         sync: false
-      - key: DISABLE_SPRING
-        value: 1
-      - key: RAILS_SKIP_ASSET_COMPILATION
-        value: 1
