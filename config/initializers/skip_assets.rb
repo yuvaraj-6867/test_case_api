@@ -1,0 +1,1 @@
+Rails.application.config.assets.compile = false if Rails.env.production?
