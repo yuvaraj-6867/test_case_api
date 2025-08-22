@@ -8,3 +8,5 @@ services:
         value: production
       - key: RAILS_MASTER_KEY
         sync: false
+        build:
+        command: bundle exec rake db:migrate
