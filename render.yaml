@@ -1,12 +1,11 @@
 services:
   - type: web
     name: test-case-api
-    env: docker
-    dockerfilePath: ./Dockerfile
+    runtime: ruby
+    buildCommand: bundle install
+    startCommand: bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}
     envVars:
       - key: RAILS_ENV
         value: production
-      - key: RAILS_MASTER_KEY
-        sync: false
-        build:
-        command: bundle exec rake db:migrate
+      - key: RACK_ENV  
+        value: production
