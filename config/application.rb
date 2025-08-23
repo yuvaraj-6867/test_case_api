@@ -33,5 +33,8 @@ module TestCaseApi
     # Enable assets for deployment compatibility
     config.assets.enabled = true
     config.assets.compile = false
+    
+    # Set secret key base for production
+    config.secret_key_base = ENV['SECRET_KEY_BASE'] || 'c70763dafb58ac983763db40264d9d0f'
   end
 end
