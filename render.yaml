@@ -9,3 +9,5 @@ services:
         value: production
       - key: RACK_ENV  
         value: production
+      - key: SECRET_KEY_BASE
+        generateValue: true
